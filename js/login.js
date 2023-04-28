@@ -12,6 +12,12 @@ window.onload = function () {
     username.style.fontSize = "medium"
   }
 
+  password.onclick = function () {
+    password.placeholder = "";
+    password.style.animation = ""
+    password.style.fontSize = "medium"
+  }
+
   login.onclick = function () {
     if (username.value.length === 0) {
       shake(username, "请输入用户名")
@@ -22,14 +28,15 @@ window.onload = function () {
     } else {
       let data = {"action": "login", "username": username.value, "password": password.value};
       const response = httpAjax("post", "/api/user", data, false)
-      const result = JSON.parse(response)
-      if (result.code === 200) {
-        window.location.replace("http://localhost:8086/pages/shop.html")
-        return false;
-      } else {
-        popup(result.message, "default")
-        return false;
+      if (isJSON(response)){
+        const result = JSON.parse(response)
+        if (result.code === 200) {
+          window.location.replace("http://localhost:8086/pages/shop.html")
+        } else {
+          popup(result.message, "default")
+        }
       }
+      return false;
     }
 
   }
