@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>书唐</title>
+  <link href="../img/logo.jpg" rel="icon">
+  <link href="../css/shutang.css" rel="stylesheet">
+  <script src="/js/common.js"></script>
+  <script src="/js/cart.js"></script>
+</head>
+<body>
+<div id="layer"></div>
+<div id="popup">
+  <div class="title">
+    <a class="title_content" id="close">
+      <img  class="title_content" src="../img/close-button.svg">
+    </a>
+  </div>
+  <div id="warning_content"></div>
+  <button id="confirm">确定</button>
+</div>
+<header>
+  <a href="shop.html"><img id="logo" src="../img/logo.jpg"></a>
+  <div class="menu_bar">
+    <ol id="visitor">
+      <li><a href="login.html">登陆</a></li>
+      <li><a href="register.html">注册</a></li>
+    </ol>
+    <ol id="vip">
+      <li><a href="my/main.html">个人中心</a></li>
+      <li><a href="shop.html" id="logout">退出登陆</a></li>
+    </ol>
+    <ol>
+      <li><a href="shop.html">回书城</a></li>
+      <li><a href="cart.html" id="cart" hidden>购物车</a></li>
+    </ol>
+  </div>
+</header>
+<main>
+  <div class="">
+    <div class="cart_display">
+      <div class="gallery">
+        <table id="table">
+          <thead>
+            <th style="width: 4rem;"></th>
+            <th>书名</th>
+            <th style="width: 4rem;">价格</th>
+            <th style="width: 16rem;">件数</th>
+          </thead>
+          <tbody>
+<!--         <tr style="display:none">-->
+<tr>
+<!--            <td class=" cover-->
+<!--            "><img src="../img/default.jpg"></td>-->
+<!--            <td class="name">name</td>-->
+<!--            <td class="each_price">price</td>-->
+<!--            <td class="number">-->
+<!--            <td class="less">-->
+<!--              <img class="modify" src="../img/delete.png">-->
+<!--            </td>-->
+<!--            <td class="input"><input value="1"></td>-->
+<!--            <td class="more">-->
+<!--              <img class="modify" src="../img/add.png">-->
+<!--            </td>-->
+<!--            </td>-->
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <div class="bottom_navi">
+        <li style="text-align: right">合计：</li>
+        <li style="text-align: left" id="totalPrice">price</li>
+
+    </div>
+  </div>
+  <div class="lower_wrap">123</div>
+</main>
+<footer>
+  <div class="footer">Author: ChiyoDonut</div>
+  <div class="footer"><a href="mailto:ChiyoDonut@hidden.com">ChiyoDonut@hidden.com</a></div>
+</footer>
+</body>
+</html>

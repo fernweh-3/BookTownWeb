@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书唐</title>
+    <link href="../img/logo.jpg" rel="icon">
+    <link href="../css/shutang.css" rel="stylesheet">
+  <script src="/js/common.js"></script>
+  <script src="/js/register.js"></script>
+</head>
+<body>
+<div id="layer">
+</div>
+<div id="popup">
+  <div class="title">
+    <a class="title_content" id="close">
+      <img  class="title_content" src="../img/close-button.svg">
+    </a>
+  </div>
+  <div id="warning_content"></div>
+  <button id="confirm">确定</button>
+</div>
+<header>
+    <a href="shop.html"><img id="logo" src="../img/logo.jpg"></a>
+    <div class="menu_bar">
+        <ol id="visitor">
+
+            <li><a href="login.html">登陆</a></li>
+            <li><a href="register.html">注册</a></li>
+
+        </ol>
+        <ol>
+            <li><a href="cart.html" id="cart">购物车</a></li>
+        </ol>
+    </div>
+</header>
+<main>
+    <div class="login">
+        <div class="login_form">
+            <form action="login.html" method="get" id="register_form">
+                <label for="username">
+                    <div>
+                        Username:
+                        <input type="text" name="username" id="username" required>
+                    </div>
+                    <div class="warning" id="username_warning"></div>
+                </label>
+                <label for="email">
+                    <div>
+                        Email:
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="warning" id="email_warning"></div>
+                </label>
+                <label for="password">
+                    <div>Password:
+                        <input type="password" name="password" id="password" required>
+                    </div>
+                    <div class="warning" id="password_warning"></div>
+                </label>
+<!--                <label for="rep_password">-->
+<!--                    <div>Password:-->
+<!--                        <input type="text" name="password" id="rep_password" required>-->
+<!--                    </div>-->
+<!--                    <div class="warning" id="rep_password_warning"></div>-->
+<!--                </label>-->
+              <label for="captcha">
+                <img id="captcha_img" src="/api/captcha">
+                <a style="font-size: small;" href="#" onclick="freshCode();">看不清?换一张图片</a>
+                <div>Captcha:
+                  <input type="text" name="captcha" id="captcha" required>
+                   </div>
+                <div class="warning" id="captcha_warning"></div>
+              </label>
+                <button id="register">Register</button>
+                <a href="login.html">Got an account? Go to Login</a>
+            </form>
+
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer">Author: ChiyoDonut</div>
+    <div class="footer"><a href="mailto:ChiyoDonut@hidden.com">ChiyoDonut@hidden.com</a></div>
+</footer>
+</body>
+</html>
