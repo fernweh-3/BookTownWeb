@@ -1,3 +1,5 @@
+const PAGE_VOLUME = 20
+
 function add_to_cart() {
     let buttons = document.getElementsByClassName("add_to_cart")
     for (const button of buttons) {
@@ -11,9 +13,9 @@ function add_to_cart() {
 }
 
 function getBookList(pageNo, category) {
-    const str = {"action": "getBookList", "pageNo": pageNo, "category": category}
+    const str = {"action": "getBookList", "pageNo": pageNo, "pageVolume": PAGE_VOLUME, "category": category}
     let response = httpAjax("post", url("book"), str, false);
-    if (isJSON(response)){
+    if (isJSON(response)) {
         const json = JSON.parse(response);
         return json.data;
     }
@@ -25,7 +27,7 @@ function cardEle(id, cover, name, author, price) {
     card.style.display = "inline-block";
     card.innerHTML =
         "            <div class=\"left_pic\">\n" +
-        "              <a href=\"book_detail.html?\"" + id + ">\n" +
+        "              <a href=\"book_detail.html?" + id + "\">\n" +
         "                <img src=\"" + cover + "\">\n" +
         "              </a>\n" +
         "            </div>\n" +
@@ -43,28 +45,12 @@ function cardEle(id, cover, name, author, price) {
 function show_cards(pageNo, category) {
     let bookList = getBookList(pageNo, category);
     const book_gallery = document.getElementsByClassName("book_gallery")[0]
-    let cards = document.getElementsByClassName("card")
-    for (let i = 0; i < cards.length; i++) {
-        cards.item(i).style.display = "none";
-    }
-    // let book_name = document.getElementsByClassName("book_name")
-    // let author = document.getElementsByClassName("author")
-    // let price = document.getElementsByClassName("price")
-    // let button = document.getElementsByClassName("add_to_cart")
+    book_gallery.innerHTML=""
     if (bookList != null) {
         for (let i = 0; i < bookList.length; i++) {
             const book = bookList[i];
             const card = cardEle(book['id'], book['cover'], book['name'], book['author'], book['price'])
             book_gallery.append(card)
-            // const pic_a = cards.item(i).children.item(0).children.item(0)
-            // const pic = cards.item(i).children.item(0).children.item(0).children.item(0)
-            // pic_a.setAttribute("href", "book_detail.html?" + book.id)
-            // pic.setAttribute("src", book.cover)
-            // book_name.item(i).innerHTML = book['name']
-            // author[i].innerHTML = book['author']
-            // price[i].innerHTML = "¥" + book['price'].toString()
-            // button[i].setAttribute("id", book['id'])
-            // cards.item(i).style.display = "inline-block";
         }
     }
     show_full_name("book_name");
@@ -76,13 +62,13 @@ function show_cards(pageNo, category) {
 function getPageInfo(subcat) {
     let data = {
         "action": "getPageInfo",
-        "page_volume": 12
+        "page_volume": PAGE_VOLUME
     }
     if (subcat !== null) {
         data = {
             "category": subcat,
             "action": "getPageInfo",
-            "page_volume": 12
+            "page_volume": PAGE_VOLUME
         }
     }
     const response = httpAjax("post", "/api/book", data, false)

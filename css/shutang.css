@@ -13,9 +13,11 @@ html {
 }
 
 body {
-  height: auto !important;
-  min-height: 100%;
-  position: relative;
+  /*height: auto !important;*/
+  /*min-height: 100%;*/
+  /*position: relative;*/
+  height: 100vh !important;
+  overflow-y: scroll;
 }
 
 #layer {
@@ -104,7 +106,7 @@ main {
   margin-top: 1em;
   border-top-style: solid;
   border-color: darkgray;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 5rem);
 }
 
 .login {
@@ -198,9 +200,10 @@ button:hover {
   background-color: #0665a9;
 }
 
-.top_navi {
+.top_navi, .back_navi{
   padding: 2px 0 3px 15px;
   width: auto;
+  height: 1.5rem;
   background-color: #d5c3aa;
   /*border-bottom: darkgrey;*/
   /*border-bottom-style: dotted;*/
@@ -227,7 +230,7 @@ a {
   background-color: blanchedalmond;
 }
 
-.top_navi a:hover, .now {
+.top_navi a:hover, .now,.back_navi a:hover {
   background-color: white;
   border-right: none;
   font-size: large;
@@ -287,7 +290,7 @@ h1 {
 .right_display {
   display: inline-block;
   overflow-x: scroll;
-  height: calc(100vh - 11.5rem);
+  height: calc(100vh - 9rem);
   width: 100vw;
 }
 
@@ -302,26 +305,25 @@ h1 {
   /*text-align: justify;*/
   padding-left: 1em;
   padding-right: 3px;
-  padding-top: 10px;
+  padding-top: 3px;
   display: inline-block;
   /*min-width: 950px;*/
   /*height: 70vh;*/
   overflow-y: scroll;
 }
-
 .gallery {
   width: auto;
 }
 
-@media screen and (max-width: 1159px) {
+@media screen and (max-width: 1160px) {
   .book_gallery {
-    width: 1160px
+    width: 1145px
   }
 }
 
 /*当页面宽度小于1200px的时候执行，0-1200*/
 
-@media screen and (min-width: 1160px) and (max-width: 1440px) {
+@media screen and (min-width: 1161px) and (max-width: 1440px) {
   .book_gallery {
     width: 1420px
   }
@@ -452,7 +454,6 @@ li {
 .card {
   display: none;
   width: 280px;
-  margin-top: 10px;
   border: solid #d5c3aa 1px;
   margin-right: 2px;
 }
@@ -533,11 +534,14 @@ li {
 
 .bottom_navi a {
   width: 3rem;
+  text-decoration: underline;
+}
+.bottom_navi a:hover {
+  text-decoration: none;
 }
 
 
 .footer {
-  background-color: white;
   width: 50%;
   float: left;
   border-top-style: solid;
@@ -549,4 +553,5 @@ footer {
   /*position: absolute;*/
   /*bottom: 0;*/
   height: 3rem;
+  background-color: #d2d0d0e3;
 }
